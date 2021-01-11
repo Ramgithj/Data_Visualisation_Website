@@ -1,0 +1,105 @@
+/* Stylesheet 4: */
+body {
+    font: 100% Courier New;
+    line-height: 26px;
+    background-color: #000000;
+}
+
+.messages {
+    color: white;
+}
+#usdDiv {
+   position: absolute;
+    left:630px;
+    top:130px;
+    height: 300px;
+    width: 600px;
+    color: white;
+    text-align: center;
+
+}
+#cadDiv {
+   position: static;
+    top:100px;
+     height: 300px;
+    width: 600px
+}
+#gbpDiv {
+   position: absolute;
+    top:420px;
+    
+    
+}
+#inrDiv {
+   position: absolute;
+    top:420px;
+    left:630px;
+
+}
+
+#sentimentGBP {
+    
+    position: absolute;
+    top: 750px;
+    left: 0%;
+    width: 370px;
+    color: white;
+    text-align: center;
+}
+
+#sentimentCAD {
+    
+    position: absolute;
+    top: 750px;
+    left: 30%;
+    color: white;
+    text-align: center;
+}
+
+#sentimentUSD {
+    
+    position: absolute;
+    top: 750px;
+    left: 60%;
+    widows: 370px;
+    color: white;
+    text-align: center;
+}
+
+#sentimentINR {
+    
+    position: absolute;
+    top: 1150px;
+    left: 0%;
+    color: white;
+    text-align: center;
+}
+
+#sentimentLKR {
+    
+    position: absolute;
+    top: 1150px;
+    left: 30%;
+    color: white;
+    text-align: center;
+}
+
+#sentimentBTN {
+    
+    position: absolute;
+    top: 1150px;
+    left: 60%;
+    color: white;
+    text-align: center;
+}
+
+h1,h2,p{
+    color: white;
+    text-align: center;
+    
+}
+
+h1 {
+    background-color: white;
+    color: black;
+}

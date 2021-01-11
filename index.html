@@ -1,0 +1,83 @@
+
+<!--THIS IS MY WORK!-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Forex Musuem</title>
+
+    <!--Plotly JavaScript Library-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!--<Import function into this HTML>-->
+    <script src="graphs.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+<h1>Forex Musuem</h1>
+<h2>Historical data for Forex Currencies</h2>
+<div id="messages"></div>
+
+
+<!-- Create DIVs to hold the charts -->
+
+    <div id="cadDiv"> </div>
+    <div id="usdDiv"></div><br>
+<div id="gbpDiv" style="width:600px;height:300px;"></div>
+<div id="inrDiv" style="width:600px;height:300px;"></div>
+
+
+
+
+        <script>
+            //Open connection to the API that was created
+                var connection = new WebSocket("wss://p1ie8ww3sd.execute-api.eu-west-1.amazonaws.com/production");
+
+            //Handle open connection event
+            connection.onopen = function(event){
+                console.log("Connected: " + JSON.stringify(event));
+                sendMessage();
+        };
+
+
+            //Send message to server
+            function sendMessage(){
+                var msgText;
+
+                //Create message to be sent to server
+                var msgObject = {
+                    action: "getData",
+                    data: msgText
+                };
+
+        connection.send(JSON.stringify(msgObject));
+
+
+        console.log("Message sent: " + JSON.stringify(msgText));
+    }
+
+
+            //Output messages from the server
+            connection.onmessage = function(msg){
+                //Here we should receive the JSON blob
+                //document.getElementById("messages").innerHTML += ("Server Message: " + msg.data + "<br />");
+                console.log("Server Message: " + msg.data + "<br />");
+                //Call: plotData() with the JavaScript Object I want to plot.
+                window.onload = plotData;
+               // console.log(msg.data);
+                plotData(JSON.parse(msg.data));
+
+            }
+
+            //Log errors
+            connection.onerror = function (error) {
+                console.log("WebSocket Error: " + JSON.stringify(error));
+            }
+
+        </script>
+</body>
+</html>

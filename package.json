@@ -1,0 +1,19 @@
+{
+  "name": "datavisualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "forex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.7.4",
+    "aws-sdk": "^2.625.0",
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.29.1",
+    "twitter": "^1.7.1"
+  }
+}

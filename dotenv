@@ -1,0 +1,5 @@
+const dotenv = require ('dotenv');
+console.log("My environmental variable is: " + process.env.SECRET_KEY);
+dotenv.config();
+console.log("My environmental variable is: " + process.env.SECRET_KEY);
+
